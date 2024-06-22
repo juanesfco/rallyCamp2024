@@ -41,7 +41,7 @@ if tabPlayer.loc[userid,'alive'] == 1:
         st.write('No more perimeter checks.')
     elif peri > 0:
         if rf.checkPeriComp(peri,userid):
-            st.write('Perimeter change completed.')
+            st.write('Perimeter check completed.')
         else:
             body = 'WARNING: Perimeter check ends in ' + time + ' seconds.'
             st.warning(body)
