@@ -5,7 +5,7 @@ import time
 import rallyFunctions as rf
 from streamlit_autorefresh import st_autorefresh
 
-st.write(st.secrets['admin'])
+st.write(st.secrets.passwords.admin)
 
 #count = st_autorefresh(interval=500, limit=1000, key="fizzbuzzcounter")
  
