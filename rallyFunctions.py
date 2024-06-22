@@ -1,5 +1,6 @@
 import pandas as pd
 import datetime
+from pytz import timezone
 
 def checkAlive():
     tab = pd.read_pickle('players.df')
@@ -92,7 +93,7 @@ def cleanChallenge(userid):
     players.to_pickle('players.df')
 
 def readyForSurvival():
-    now = datetime.datetime.now()
+    now = datetime.datetime.now(timezone('America/Barbados'))
     r1s = datetime.datetime(2024,6,22,8,20)
     r1e = datetime.datetime(2024,6,22,15,30)
 
@@ -163,7 +164,7 @@ def checkAnswerSurvival(pid,ans,userid):
         return('Wrong :(')
 
 def readyForPerimeter():
-    now = datetime.datetime.now()
+    now = datetime.datetime.now(timezone('America/Barbados'))
     r1s = datetime.datetime(2024,6,22,10,16)
     r1e = datetime.datetime(2024,6,22,10,20)
 
