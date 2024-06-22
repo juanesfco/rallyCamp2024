@@ -10,6 +10,12 @@ def killPlayer(id):
     tab.loc[id,'alive'] = 0
     tab.to_pickle('players.df')
 
+def changePer(id,peri,val):
+    tab = pd.read_pickle('players.df')
+    col = 'p' + str(peri)
+    tab.loc[id,col] = val
+    tab.to_pickle('players.df')
+
 def revivePlayer(id):
     tab = pd.read_pickle('players.df')
     tab.loc[id,'alive'] = 1
