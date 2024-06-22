@@ -4,7 +4,6 @@ import datetime
 import os
 import rallyFunctions as rf
 from streamlit_autorefresh import st_autorefresh
-from pytz import timezone
 
 count = st_autorefresh(interval=1000, limit=5400)
 
@@ -41,7 +40,7 @@ user = os.path.basename(script_path)[:-3]
 
 st.write("Hola ", user)
 
-st.write("Current time", datetime.datetime.now(timezone('America/Barbados')))
+st.write("Current time", datetime.datetime.now())
 
 if st.checkbox('Players Table:'):
 

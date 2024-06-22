@@ -1,6 +1,5 @@
 import pandas as pd
 import datetime
-from pytz import timezone
 
 def checkAlive():
     tab = pd.read_pickle('players.df')
@@ -93,24 +92,24 @@ def cleanChallenge(userid):
     players.to_pickle('players.df')
 
 def readyForSurvival():
-    now = datetime.datetime.now(timezone('America/Barbados'))
-    r1s = datetime.datetime(2024,6,22,8,20)
-    r1e = datetime.datetime(2024,6,22,15,30)
+    now = datetime.datetime.now()
+    r1s = datetime.datetime(2024,6,22,14,20)
+    r1e = datetime.datetime(2024,6,22,19,30)
 
-    r2s = datetime.datetime(2024,6,22,15,35)
-    r2e = datetime.datetime(2024,6,22,15,45)
+    r2s = datetime.datetime(2024,6,22,19,35)
+    r2e = datetime.datetime(2024,6,22,19,45)
 
-    r3s = datetime.datetime(2024,6,22,15,50)
-    r3e = datetime.datetime(2024,6,22,16,0)
+    r3s = datetime.datetime(2024,6,22,19,50)
+    r3e = datetime.datetime(2024,6,22,20,0)
 
-    r4s = datetime.datetime(2024,6,22,16,5)
-    r4e = datetime.datetime(2024,6,22,16,15)
+    r4s = datetime.datetime(2024,6,22,20,5)
+    r4e = datetime.datetime(2024,6,22,20,15)
 
-    r5s = datetime.datetime(2024,6,22,16,20)
-    r5e = datetime.datetime(2024,6,22,16,30)
+    r5s = datetime.datetime(2024,6,22,20,20)
+    r5e = datetime.datetime(2024,6,22,20,30)
 
-    r6s = datetime.datetime(2024,6,22,16,35)
-    r6e = datetime.datetime(2024,6,22,16,45)
+    r6s = datetime.datetime(2024,6,22,20,35)
+    r6e = datetime.datetime(2024,6,22,20,45)
 
     if now < r1s:
         time = r1s - now
@@ -164,18 +163,18 @@ def checkAnswerSurvival(pid,ans,userid):
         return('Wrong :(')
 
 def readyForPerimeter():
-    now = datetime.datetime.now(timezone('America/Barbados'))
-    r1s = datetime.datetime(2024,6,22,10,16)
-    r1e = datetime.datetime(2024,6,22,10,20)
+    now = datetime.datetime.now()
+    r1s = datetime.datetime(2024,6,22,14,35)
+    r1e = datetime.datetime(2024,6,22,14,37)
 
-    r2s = datetime.datetime(2024,6,22,15,55)
-    r2e = datetime.datetime(2024,6,22,15,57)
+    r2s = datetime.datetime(2024,6,22,19,55)
+    r2e = datetime.datetime(2024,6,22,19,57)
 
-    r3s = datetime.datetime(2024,6,22,16,20)
-    r3e = datetime.datetime(2024,6,22,16,22)
+    r3s = datetime.datetime(2024,6,22,20,20)
+    r3e = datetime.datetime(2024,6,22,20,22)
 
-    r4s = datetime.datetime(2024,6,22,16,45)
-    r4e = datetime.datetime(2024,6,22,16,47)
+    r4s = datetime.datetime(2024,6,22,20,45)
+    r4e = datetime.datetime(2024,6,22,20,47)
 
     if now < r1s:
         time = r1s - now
