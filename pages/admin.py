@@ -50,7 +50,7 @@ if st.checkbox('Players Table:'):
         if st.checkbox('Change Perimeter:'):
             id = st.text_input('Enter id:')
             peri = st.text_input('Enter perimeter:')
-            value = int(st.number_input('Enter number:'))
+            value = int(st.text_input('Enter number:'))
             if st.button('Change'):
                 rf.changePer(id,peri,value)
     with col4:
