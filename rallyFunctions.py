@@ -99,23 +99,23 @@ def cleanChallenge(userid):
 
 def readyForSurvival():
     now = datetime.datetime.now()
-    r1s = datetime.datetime(2024,6,22,19,42)
-    r1e = datetime.datetime(2024,6,22,19,52)
+    r1s = datetime.datetime(2024,6,22,15,42)
+    r1e = datetime.datetime(2024,6,22,15,52)
 
-    r2s = datetime.datetime(2024,6,22,19,54)
-    r2e = datetime.datetime(2024,6,22,20,4)
+    r2s = datetime.datetime(2024,6,22,15,54)
+    r2e = datetime.datetime(2024,6,22,16,4)
 
-    r3s = datetime.datetime(2024,6,22,20,6)
-    r3e = datetime.datetime(2024,6,22,20,16)
+    r3s = datetime.datetime(2024,6,22,16,6)
+    r3e = datetime.datetime(2024,6,22,16,16)
 
-    r4s = datetime.datetime(2024,6,22,20,18)
-    r4e = datetime.datetime(2024,6,22,20,28)
+    r4s = datetime.datetime(2024,6,22,16,18)
+    r4e = datetime.datetime(2024,6,22,16,28)
 
-    r5s = datetime.datetime(2024,6,22,20,30)
-    r5e = datetime.datetime(2024,6,22,20,40)
+    r5s = datetime.datetime(2024,6,22,16,30)
+    r5e = datetime.datetime(2024,6,22,16,40)
 
-    r6s = datetime.datetime(2024,6,22,20,42)
-    r6e = datetime.datetime(2024,6,22,20,52)
+    r6s = datetime.datetime(2024,6,22,16,42)
+    r6e = datetime.datetime(2024,6,22,16,52)
 
     if now < r1s:
         time = r1s - now
@@ -170,17 +170,17 @@ def checkAnswerSurvival(pid,ans,userid):
 
 def readyForPerimeter():
     now = datetime.datetime.now()
-    r1s = datetime.datetime(2024,6,22,19,50)
-    r1e = datetime.datetime(2024,6,22,19,52)
+    r1s = datetime.datetime(2024,6,22,15,55)
+    r1e = datetime.datetime(2024,6,22,15,57)
 
-    r2s = datetime.datetime(2024,6,22,20,10)
-    r2e = datetime.datetime(2024,6,22,20,12)
+    r2s = datetime.datetime(2024,6,22,16,10)
+    r2e = datetime.datetime(2024,6,22,16,12)
 
-    r3s = datetime.datetime(2024,6,22,20,30)
-    r3e = datetime.datetime(2024,6,22,20,32)
+    r3s = datetime.datetime(2024,6,22,16,30)
+    r3e = datetime.datetime(2024,6,22,16,32)
 
-    r4s = datetime.datetime(2024,6,22,20,50)
-    r4e = datetime.datetime(2024,6,22,20,52)
+    r4s = datetime.datetime(2024,6,22,16,50)
+    r4e = datetime.datetime(2024,6,22,17,2)
 
     if now < r1s:
         time = r1s - now

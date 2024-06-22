@@ -65,7 +65,8 @@ if st.checkbox('Players Table:'):
             if st.button('Revive'):
                 rf.revivePlayer(id)
 
-    tab = pd.read_pickle('players.df')
+    tab = pd.read_pickle('players.df').sort_values(by=['alive'],ascending=False)
+    st.write('Perimetro 4: 71ha')
     st.table(tab)
 
 if st.checkbox('Problem Table:'):
