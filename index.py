@@ -1,14 +1,14 @@
 import streamlit as st
-import pandas as pd
-from datetime import datetime
-import time
-import rallyFunctions as rf
-from streamlit_autorefresh import st_autorefresh
+import hmac
 
-st.write(st.secrets.passwords.admin)
+st.markdown("""
+<style>
+section[data-testid="stSidebar"][aria-expanded="true"]{
+display: none;
+}
+</style>
+""", unsafe_allow_html=True)
 
-#count = st_autorefresh(interval=500, limit=1000, key="fizzbuzzcounter")
- 
 st.write("""
 Mathematical Rally - OMPR Camp 2024
 """)
@@ -17,16 +17,43 @@ st.write("""
 Hunger Games Version:
 """)
 
-#tab = pd.read_pickle('players.df')
-#st.table(tab)
-#if st.checkbox('Kill: '):
-#    number = st.number_input("Insert a number: ",value=None)
-#    if type(number) == float:
-#        rf.killPlayer(number)
+def check_password():
+    """Returns `True` if the user had a correct password."""
 
-#if st.button('Reset game: '):
-#    rf.resetTable()
-    
-#if st.checkbox('Check count: '):
-#    st.write(count)
+    def login_form():
+        """Form with widgets to collect user information"""
+        with st.form("Credentials"):
+            st.text_input("Username", key="username")
+            st.text_input("Password", type="password", key="password")
+            st.form_submit_button("Log in", on_click=password_entered)
 
+    def password_entered():
+        """Checks whether a password entered by the user is correct."""
+        if st.session_state["username"] in st.secrets[
+            "passwords"
+        ] and hmac.compare_digest(
+            st.session_state["password"],
+            st.secrets.passwords[st.session_state["username"]],
+        ):
+            st.session_state["password_correct"] = True
+            del st.session_state["password"]  # Don't store the username or password.
+            #del st.session_state["username"]
+        else:
+            st.session_state["password_correct"] = False
+
+    # Return True if the username + password is validated.
+    if st.session_state.get("password_correct", False):
+        return True
+
+    # Show inputs for username + password.
+    login_form()
+    if "password_correct" in st.session_state:
+        st.error("😕 User not known or password incorrect")
+    return False
+
+if not check_password():
+    st.stop()
+else:
+    del st.session_state["password_correct"]
+    page = "pages/" + st.session_state["username"] + ".py"
+    st.switch_page(page)
