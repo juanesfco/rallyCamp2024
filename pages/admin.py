@@ -5,7 +5,7 @@ import os
 import rallyFunctions as rf
 from streamlit_autorefresh import st_autorefresh
 
-count = st_autorefresh(interval=100, limit=54000)
+count = st_autorefresh(interval=1000, limit=5400)
 
 st.markdown("""
 <style>
