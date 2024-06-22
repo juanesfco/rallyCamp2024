@@ -218,8 +218,3 @@ def checkAnswerPeri(ans,peri,userid):
         return('Correct!')
     else:
         return('Wrong :(')
-    
-def eliminateNotPeri(userid):
-    players = pd.read_pickle('players.df')
-    col = 'p' + str(peri)
-    return(players.loc[userid,col]==1)
