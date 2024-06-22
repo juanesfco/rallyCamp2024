@@ -40,6 +40,8 @@ user = os.path.basename(script_path)[:-3]
 
 st.write("Hola ", user)
 
+st.write("Current time", datetime.datetime.now())
+
 if st.checkbox('Players Table:'):
 
     col3,col4,col5 = st.columns(3)
