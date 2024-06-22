@@ -56,8 +56,6 @@ if tabPlayer.loc[userid,'alive'] == 1:
             if not rf.checkPeriComp(-1*peri,userid):
                 rf.killPlayer(userid)
         
-
-
     if tabPlayer.loc[userid,'opp'] == 'none':
         oppid = st.text_input('To start challenge enter opponent id: ')
         if st.button('Challenge!'):
