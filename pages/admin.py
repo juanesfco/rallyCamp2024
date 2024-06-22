@@ -23,7 +23,7 @@ with col1:
 
 with col2:
     if st.checkbox('Timer:'):
-        countSec = int(int(count)/10)
+        countSec = int(int(count))
         timer = str(datetime.timedelta(seconds=countSec))
         st.write(timer)
 
