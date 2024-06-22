@@ -164,8 +164,8 @@ def checkAnswerSurvival(pid,ans,userid):
 
 def readyForPerimeter():
     now = datetime.datetime.now()
-    r1s = datetime.datetime(2024,6,22,8,30)
-    r1e = datetime.datetime(2024,6,22,10,00)
+    r1s = datetime.datetime(2024,6,22,10,0)
+    r1e = datetime.datetime(2024,6,22,10,10)
 
     r2s = datetime.datetime(2024,6,22,15,55)
     r2e = datetime.datetime(2024,6,22,15,57)
